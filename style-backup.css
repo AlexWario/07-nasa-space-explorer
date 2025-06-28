@@ -1,0 +1,1268 @@
+/* Global reset & box sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* NASA Brand Colors and Typography */
+:root {
+  --nasa-blue: #0B3D91;        /* NASA's official primary blue */
+  --nasa-red: #FC3D21;         /* NASA's official red */
+  --nasa-dark-blue: #061E42;   /* Darker blue for text */
+  --nasa-light-blue: #5A9BD4;  /* Light blue for accents */
+  --nasa-gray: #6C6C6C;        /* NASA gray for secondary text */
+  --nasa-light-gray: #F5F5F5;  /* Light background */
+  --nasa-white: #FFFFFF;       /* Pure white */
+  --nasa-black: #000000;       /* Deep black for contrast */
+}
+
+/* Enhanced Mobile-First Responsive Design */
+
+/* Base styles optimized for mobile */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, var(--nasa-light-gray) 0%, #E8F4FD 100%);
+  color: var(--nasa-dark-blue);
+  padding: 10px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container responsive sizing */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 5px;
+}
+
+/* Mobile-optimized header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--nasa-blue) 0%, var(--nasa-dark-blue) 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(11, 61, 145, 0.3);
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  color: var(--nasa-white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Mobile-friendly logo */
+.logo {
+  width: 100px;
+  margin-right: 15px;
+  filter: brightness(1.1);
+  flex-shrink: 0;
+}
+
+/* Mobile-first filters section */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 20px 15px;
+  background: var(--nasa-white);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(11, 61, 145, 0.1);
+  border: 1px solid rgba(11, 61, 145, 0.1);
+}
+
+/* Touch-friendly inputs and buttons */
+input[type="date"],
+button {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: var(--nasa-dark-blue);
+  padding: 16px 20px;
+  border: 2px solid var(--nasa-light-blue);
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.4;
+  width: 100%;
+  transition: all 0.3s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  min-height: 48px; /* iOS touch target minimum */
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border-color: var(--nasa-blue);
+  box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.1);
+}
+
+/* Mobile-optimized button */
+button {
+  background: linear-gradient(135deg, var(--nasa-blue) 0%, var(--nasa-dark-blue) 100%);
+  color: var(--nasa-white);
+  border: 2px solid var(--nasa-blue);
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(11, 61, 145, 0.3);
+  touch-action: manipulation; /* Prevents zoom on double-tap */
+}
+
+button:hover,
+button:active {
+  background: linear-gradient(135deg, var(--nasa-dark-blue) 0%, var(--nasa-blue) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(11, 61, 145, 0.4);
+}
+
+/* Responsive breakpoints */
+@media (min-width: 480px) {
+  body {
+    padding: 15px;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  .logo {
+    width: 120px;
+  }
+}
+
+@media (min-width: 600px) {
+  body {
+    padding: 20px;
+  }
+  
+  .filters {
+    flex-direction: row;
+    padding: 25px;
+    gap: 15px;
+  }
+  
+  input[type="date"],
+  button {
+    width: auto;
+    flex: 1;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .logo {
+    width: 140px;
+    margin-right: 20px;
+  }
+}
+
+/* Mobile-first space fact section */
+.space-fact-container {
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--nasa-blue) 0%, var(--nasa-dark-blue) 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(11, 61, 145, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+.space-fact-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="white" opacity="0.3"/><circle cx="80" cy="30" r="0.5" fill="white" opacity="0.5"/><circle cx="40" cy="70" r="0.8" fill="white" opacity="0.4"/><circle cx="90" cy="80" r="0.6" fill="white" opacity="0.3"/><circle cx="10" cy="60" r="0.4" fill="white" opacity="0.6"/></svg>') repeat;
+  pointer-events: none;
+}
+
+.space-fact-content {
+  padding: 20px 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.space-fact-title {
+  color: var(--nasa-white);
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.space-fact-text {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  font-weight: 300;
+}
+
+/* Responsive space fact */
+@media (min-width: 480px) {
+  .space-fact-content {
+    padding: 25px 20px;
+  }
+  
+  .space-fact-title {
+    font-size: 18px;
+    gap: 10px;
+    letter-spacing: 1px;
+  }
+  
+  .space-fact-text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+@media (min-width: 768px) {
+  .space-fact-container {
+    margin-bottom: 25px;
+  }
+  
+  .space-fact-content {
+    padding: 25px 30px;
+  }
+  
+  .space-fact-title {
+    font-size: 20px;
+  }
+  
+  .space-fact-text {
+    font-size: 16px;
+  }
+}
+
+/* Stack horizontally on wider screens */
+@media (min-width: 600px) {
+  .filters {
+    flex-direction: row;
+    padding: 0;
+  }
+  
+  input[type="date"],
+  button {
+    width: auto;
+  }
+}
+
+/* Gallery flex container with NASA styling - Enhanced Mobile Layout */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: var(--nasa-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(11, 61, 145, 0.1);
+  min-height: 400px;
+  align-content: start;
+}
+
+/* Mobile-first gallery adjustments */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+  }
+}
+
+/* Legacy gallery-item styles removed - now using .image-card */
+
+/* Enhanced hover zoom effect for gallery images */
+.gallery-image {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.image-card:hover .gallery-image {
+  transform: scale(1.08);
+}
+
+/* Placeholder content with NASA styling */
+.placeholder {
+  flex: 1 1 100%;
+  text-align: center;
+  padding: 60px 40px;
+  color: var(--nasa-gray);
+  background: linear-gradient(135deg, rgba(11, 61, 145, 0.05) 0%, rgba(90, 155, 212, 0.05) 100%);
+  border-radius: 8px;
+  border: 2px dashed var(--nasa-light-blue);
+}
+
+.placeholder-icon {
+  font-size: 64px;
+  margin-bottom: 25px;
+  filter: grayscale(0.2);
+}
+
+/* Loading state with NASA branding */
+.loading {
+  flex: 1 1 100%;
+  text-align: center;
+  padding: 60px 40px;
+  color: var(--nasa-blue);
+  font-size: 20px;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading::before {
+  content: "🚀";
+  font-size: 64px;
+  margin-bottom: 20px;
+  animation: rocket-float 2s ease-in-out infinite;
+}
+
+@keyframes rocket-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Error state with NASA styling */
+.error {
+  flex: 1 1 100%;
+  text-align: center;
+  padding: 60px 40px;
+  color: var(--nasa-red);
+  background: rgba(252, 61, 33, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(252, 61, 33, 0.2);
+}
+
+.error-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.error-details {
+  font-size: 14px;
+  color: var(--nasa-gray);
+  margin-top: 10px;
+}
+
+/* No results state with NASA styling */
+.no-results {
+  flex: 1 1 100%;
+  text-align: center;
+  padding: 60px 40px;
+  color: var(--nasa-gray);
+  background: linear-gradient(135deg, rgba(11, 61, 145, 0.03) 0%, rgba(90, 155, 212, 0.03) 100%);
+  border-radius: 8px;
+  border: 1px dashed var(--nasa-light-blue);
+}
+
+.no-results-icon {
+  font-size: 64px;
+  margin-bottom: 25px;
+  filter: grayscale(0.3);
+}
+
+/* Image card styles with NASA branding - Mobile Optimized */
+.image-card {
+  width: 100%;
+  height: 320px;
+  background: var(--nasa-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(11, 61, 145, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(11, 61, 145, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  /* Ensure cards don't grow or shrink unexpectedly */
+  flex-shrink: 0;
+}
+
+.image-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(11, 61, 145, 0.25);
+}
+
+/* Card content styles */
+.card-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100px; /* Ensure consistent card height */
+}
+
+.image-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--nasa-dark-blue);
+  margin-bottom: 8px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  /* Improved contrast and readability */
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2px 6px;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.image-date {
+  font-size: 13px;
+  color: var(--nasa-white);
+  font-weight: 700;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background: linear-gradient(135deg, var(--nasa-blue) 0%, var(--nasa-dark-blue) 100%);
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(11, 61, 145, 0.3);
+}
+
+/* Add visual hint for clickable cards - Mobile Friendly */
+.image-card::after {
+  content: "Tap for details";
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 11px;
+  color: var(--nasa-white);
+  background: rgba(11, 61, 145, 0.9);
+  padding: 3px 8px;
+  border-radius: 12px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(11, 61, 145, 0.4);
+  pointer-events: none;
+}
+
+/* Show hint on mobile by default, hide on hover for desktop */
+@media (hover: hover) {
+  .image-card::after {
+    content: "Click for details";
+    opacity: 0;
+  }
+  
+  .image-card:hover::after {
+    opacity: 1;
+  }
+}
+
+/* Don't show hint for embedded videos */
+.image-card:has(.youtube-embed)::after,
+.image-card:has(.video-placeholder)::after {
+  display: none;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+/* Video placeholder styles */
+.video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(135deg, var(--nasa-dark-blue) 0%, var(--nasa-blue) 100%);
+  color: var(--nasa-white);
+  padding: 20px;
+  text-align: center;
+}
+
+.video-placeholder .video-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+.video-title {
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--nasa-red) 0%, #D32F2F 100%);
+  color: var(--nasa-white);
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 10px rgba(252, 61, 33, 0.3);
+}
+
+.video-link:hover {
+  background: linear-gradient(135deg, #D32F2F 0%, var(--nasa-red) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(252, 61, 33, 0.5);
+}
+
+.video-play-icon {
+  font-size: 12px;
+}
+
+/* Video embed styles */
+.video-embed-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: var(--nasa-dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Enhanced Modal styles with sleek NASA design */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(6, 30, 66, 0.95) 0%, rgba(11, 61, 145, 0.9) 100%);
+  animation: modalFadeIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@keyframes modalFadeIn {
+  from { 
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to { 
+    opacity: 1;
+    backdrop-filter: blur(10px);
+  }
+}
+
+.modal-content {
+  position: relative;
+  background: linear-gradient(180deg, var(--nasa-white) 0%, #FAFBFC 100%);
+  margin: 2% auto;
+  padding: 0;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 60px rgba(11, 61, 145, 0.4),
+    0 8px 30px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  animation: modalSlideIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(11, 61, 145, 0.1);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes modalSlideIn {
+  from { 
+    transform: translateY(-60px) scale(0.95);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Modal Header */
+.modal-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1002;
+  padding: 20px;
+}
+
+.modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--nasa-red) 0%, #D32F2F 100%);
+  border-radius: 50%;
+  color: var(--nasa-white);
+  font-size: 24px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 20px rgba(252, 61, 33, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.modal-close:hover {
+  background: linear-gradient(135deg, #D32F2F 0%, var(--nasa-red) 100%);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 6px 25px rgba(252, 61, 33, 0.6);
+}
+
+/* Enhanced Image Container */
+.modal-image-container {
+  position: relative;
+  width: 100%;
+  max-height: 55vh;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(135deg, var(--nasa-dark-blue) 0%, var(--nasa-blue) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+#modalImage {
+  width: 100%;
+  height: auto;
+  max-height: 55vh;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+#modalImage:hover {
+  transform: scale(1.02);
+}
+
+/* Enhanced Modal Details */
+.modal-details {
+  padding: 0;
+  background: linear-gradient(180deg, var(--nasa-white) 0%, #FAFBFC 100%);
+  border-radius: 0 0 20px 20px;
+  overflow-y: auto;
+  max-height: 45vh;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  overscroll-behavior: contain; /* Prevent body scroll when modal scrolling */
+}
+
+/* Modal Info Section */
+.modal-info-section {
+  padding: 30px 30px 20px;
+  border-bottom: 1px solid rgba(11, 61, 145, 0.1);
+  background: linear-gradient(90deg, rgba(11, 61, 145, 0.02) 0%, rgba(90, 155, 212, 0.02) 100%);
+}
+
+.modal-title {
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--nasa-dark-blue);
+  margin-bottom: 15px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.modal-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.modal-date {
+  font-size: 14px;
+  color: var(--nasa-blue);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(11, 61, 145, 0.1) 0%, rgba(90, 155, 212, 0.1) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(11, 61, 145, 0.2);
+  margin: 0;
+}
+
+.modal-copyright {
+  font-size: 12px;
+  color: var(--nasa-gray);
+  font-style: italic;
+  padding: 6px 12px;
+  background: rgba(108, 108, 108, 0.1);
+  border-radius: 15px;
+  margin: 0;
+}
+
+/* Modal Description Section */
+.modal-description-section {
+  padding: 25px 30px 30px;
+}
+
+.modal-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--nasa-dark-blue);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--nasa-blue);
+  display: inline-block;
+}
+
+.modal-explanation {
+  font-size: 16px;
+  color: var(--nasa-gray);
+  line-height: 1.7;
+  margin: 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Modal video enhancements */
+.modal-youtube-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  background: var(--nasa-black);
+}
+
+.modal-youtube-embed {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.modal-video-title {
+  font-size: 22px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  color: var(--nasa-white);
+}
+
+.modal-video-description {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.modal-video-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, var(--nasa-red) 0%, #D32F2F 100%);
+  color: var(--nasa-white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 6px 20px rgba(252, 61, 33, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-video-button:hover {
+  background: linear-gradient(135deg, #D32F2F 0%, var(--nasa-red) 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(252, 61, 33, 0.6);
+}
+
+.modal-video-button .video-play-icon {
+  font-size: 18px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Enhanced Video Placeholder in Modal */
+.modal-video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  background: linear-gradient(135deg, var(--nasa-dark-blue) 0%, var(--nasa-blue) 100%);
+  color: var(--nasa-white);
+  text-align: center;
+  padding: 30px;
+}
+
+.modal-video-placeholder .video-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Comprehensive Mobile Optimizations */
+
+/* Gallery responsive layout improvements */
+.gallery {
+  gap: 15px;
+  padding: 15px;
+}
+
+/* Enhanced image card responsive behavior */
+@media (max-width: 480px) {
+  .image-card {
+    min-width: 100%;
+    height: auto;
+    min-height: 280px;
+  }
+  
+  .card-content {
+    padding: 15px;
+    min-height: 80px;
+  }
+  
+  .image-title {
+    font-size: 16px;
+    line-height: 1.3;
+    padding: 3px 6px;
+    border-radius: 4px;
+  }
+  
+  .image-date {
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 10px;
+  }
+  
+  .gallery {
+    gap: 12px;
+    padding: 10px;
+  }
+}
+
+/* Landscape mode optimizations for small screens */
+@media (max-height: 500px) and (orientation: landscape) {
+  body {
+    padding: 5px;
+  }
+  
+  .site-header {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 45px;
+  }
+  
+  .space-fact-container {
+    margin-bottom: 10px;
+  }
+  
+  .space-fact-content {
+    padding: 12px 15px;
+  }
+  
+  .space-fact-title {
+    font-size: 14px;
+  }
+  
+  .space-fact-text {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  .gallery {
+    gap: 10px;
+    padding: 8px;
+  }
+  
+  .image-card {
+    height: 240px;
+    min-height: 240px;
+  }
+  
+  .card-content {
+    padding: 12px;
+  }
+  
+  /* Modal optimizations for landscape */
+  .modal-content {
+    width: 98%;
+    max-height: 95vh;
+    margin: 2.5% auto;
+  }
+  
+  .modal-image-container {
+    max-height: 45vh;
+  }
+  
+  #modalImage {
+    max-height: 45vh;
+  }
+  
+  .modal-info-section {
+    padding: 12px 15px 8px;
+  }
+  
+  .modal-title {
+    font-size: 18px;
+  }
+  
+  .modal-description-section {
+    padding: 10px 15px;
+  }
+  
+  .modal-explanation {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
+/* Touch-friendly enhancements */
+@media (pointer: coarse) {
+  /* Larger touch targets for mobile */
+  .image-card {
+    cursor: pointer;
+  }
+  
+  /* Enhanced touch feedback */
+  .image-card:active {
+    transform: translateY(-4px) scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Modal close button touch improvements */
+  .modal-close {
+    min-width: 48px;
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+  
+  /* Prevent double-tap zoom on buttons */
+  button, .modal-close, .image-card {
+    touch-action: manipulation;
+  }
+}
+
+/* Very small screens (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 2px;
+  }
+  
+  .site-header {
+    padding: 15px 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .logo {
+    width: 70px;
+    height: 50px;
+  }
+  
+  .image-card {
+    min-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .card-content {
+    padding: 12px;
+  }
+  
+  .image-title {
+    font-size: 15px;
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+  
+  .image-date {
+    font-size: 11px;
+    padding: 2px 5px;
+    border-radius: 8px;
+  }
+  
+  .modal-content {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    height: 100vh;
+    max-height: 100vh;
+  }
+  
+  .modal-image-container {
+    border-radius: 0;
+  }
+  
+  .modal-header {
+    padding: 10px;
+  }
+  
+  .modal-close {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+}
+
+/* High DPI / Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .gallery-image,
+  #modalImage {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .image-card:hover {
+    transform: none;
+  }
+  
+  .gallery-image {
+    transition: none;
+  }
+  
+  .image-card:hover .gallery-image {
+    transform: none;
+  }
+}
+
+/* Dark mode support (if user prefers dark) */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d30 100%);
+  }
+  
+  .image-card {
+    background: #2d2d30;
+    border-color: rgba(90, 155, 212, 0.2);
+  }
+  
+  .gallery {
+    background: #2d2d30;
+  }
+  
+  .modal-content {
+    background: #2d2d30;
+  }
+  
+  .modal-description-section {
+    background: #1a1a1a;
+  }
+  
+  /* Enhanced text contrast for dark mode */
+  .image-title {
+    color: var(--nasa-dark-blue);
+    background: rgba(255, 255, 255, 0.98);
+    text-shadow: none;
+  }
+  
+  .image-date {
+    background: linear-gradient(135deg, var(--nasa-light-blue) 0%, var(--nasa-blue) 100%);
+    color: var(--nasa-white);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Improve hint visibility in dark mode */
+  .image-card::after {
+    color: var(--nasa-light-blue);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+}
+
+/* Mobile device specific styles */
+.mobile-device input[type="date"] {
+  font-size: 16px !important; /* Prevent zoom on iOS */
+}
+
+.mobile-device .image-card {
+  /* Enhanced touch targets for mobile */
+  min-height: 44px; /* iOS minimum touch target */
+}
+
+.mobile-device .modal-close {
+  /* Larger touch target for mobile */
+  min-width: 48px;
+  min-height: 48px;
+}
+
+/* Improve modal scroll behavior on mobile */
+.modal-details {
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  overscroll-behavior: contain; /* Prevent body scroll when modal scrolling */
+}
+
+/* Better focus indicators for accessibility */
+.image-card:focus-visible {
+  outline: 3px solid var(--nasa-blue);
+  outline-offset: 2px;
+}
+
+input[type="date"]:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--nasa-blue);
+  outline-offset: 2px;
+}
+
+.modal-close:focus-visible {
+  outline: 3px solid var(--nasa-white);
+  outline-offset: 2px;
+}
+
+/* Enhanced loading state for mobile */
+@media (max-width: 480px) {
+  .loading {
+    padding: 40px 20px;
+    font-size: 16px;
+  }
+  
+  .loading-text {
+    font-size: 18px;
+  }
+  
+  .error {
+    padding: 40px 20px;
+    font-size: 14px;
+  }
+  
+  .no-results {
+    padding: 40px 20px;
+  }
+  
+  .no-results-icon {
+    font-size: 48px;
+  }
+}
+
+/* Gesture feedback improvements */
+.modal-content {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.modal.gesture-active .modal-content {
+  transition: none; /* Disable transition during gesture */
+}
+
+/* Improve touch scrolling in modal */
+.modal-details {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+/* Add subtle haptic feedback indicator */
+@media (pointer: coarse) {
+  .image-card:active {
+    box-shadow: 0 2px 8px rgba(11, 61, 145, 0.3);
+  }
+  
+  .modal-content:active {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+}
